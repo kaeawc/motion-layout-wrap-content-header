@@ -22,7 +22,7 @@
             android:layout_height="wrap_content"
             motion:layout_constraintTop_toTopOf="parent"
             >
-            <PropertySet motion:progress="0" />
+            <PropertySet motion:motionProgress="0" />
         </Constraint>
         <Constraint android:id="@id/recycler_view" />
     </ConstraintSet>
@@ -33,7 +33,7 @@
             android:layout_height="56dp"
             motion:layout_constraintTop_toTopOf="parent"
             >
-            <PropertySet motion:progress="1" />
+            <PropertySet motion:motionProgress="1" />
         </Constraint>
         <Constraint android:id="@id/recycler_view"
             android:layout_width="match_parent"
