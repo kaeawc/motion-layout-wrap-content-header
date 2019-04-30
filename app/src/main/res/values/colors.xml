@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/white</color>
+    <color name="colorPrimaryDark">@color/black</color>
+    <color name="colorAccent">@color/greenDark</color>
+
+
+    <color name="white">#fff</color>
+    <color name="gray_14">#eee</color>
+    <color name="gray_13">#ddd</color>
+    <color name="gray_12">#ccc</color>
+    <color name="gray_11">#bbb</color>
+    <color name="gray_10">#aaa</color>
+    <color name="gray_9">#999</color>
+    <color name="gray_8">#888</color>
+    <color name="gray_7">#777</color>
+    <color name="gray_6">#666</color>
+    <color name="gray_5">#555</color>
+    <color name="gray_4">#444</color>
+    <color name="gray_3">#333</color>
+    <color name="gray_2">#222</color>
+    <color name="gray_1">#111</color>
+    <color name="black">#000</color>
+
+    <color name="greenPale">#afa</color>
+    <color name="greenDark">#16A016</color>
+    <color name="bluePale">#88f</color>
+
+</resources>
