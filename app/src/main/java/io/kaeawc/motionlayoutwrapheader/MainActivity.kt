@@ -3,6 +3,7 @@ package io.kaeawc.motionlayoutwrapheader
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.constraintlayout.motion.widget.MotionLayout
+import androidx.constraintlayout.motion.widget.MotionScene
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
@@ -24,6 +25,8 @@ class MainActivity : AppCompatActivity() {
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 Timber.d("completed")
             }
+
+            override fun allowsTransition(transition: MotionScene.Transition): Boolean = true
         })
     }
 }
