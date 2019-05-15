@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.MotionScene
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.header_layout.*
 import timber.log.Timber
 
 class MainActivity : AppCompatActivity() {
@@ -28,5 +29,22 @@ class MainActivity : AppCompatActivity() {
 
             override fun allowsTransition(transition: MotionScene.Transition): Boolean = true
         })
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        if (motion_root?.currentState == R.id.start) {
+            transitionToScrolling()
+        }
+    }
+
+    private fun transitionToScrolling() {
+        motion_root?.postDelayed({
+            motion_root?.setTransition(R.id.scrollingStart, R.id.scrollingEnd)
+            motion_root?.postDelayed({
+                motion_root?.progress = 0f
+            }, 1)
+        }, 1)
     }
 }
