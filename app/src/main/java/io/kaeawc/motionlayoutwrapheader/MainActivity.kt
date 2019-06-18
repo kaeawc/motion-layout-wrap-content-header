@@ -26,25 +26,6 @@ class MainActivity : AppCompatActivity() {
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 Timber.d("completed")
             }
-
-            override fun allowsTransition(transition: MotionScene.Transition): Boolean = true
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-
-        if (motion_root?.currentState == R.id.start) {
-            transitionToScrolling()
-        }
-    }
-
-    private fun transitionToScrolling() {
-        motion_root?.postDelayed({
-            motion_root?.setTransition(R.id.scrollingStart, R.id.scrollingEnd)
-            motion_root?.postDelayed({
-                motion_root?.progress = 0f
-            }, 1)
-        }, 1)
     }
 }

@@ -3,58 +3,32 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-    <StateSet motion:defaultState="@id/start" />
-
-    <Transition
-        motion:constraintSetStart="@+id/start"
-        motion:constraintSetEnd="@+id/scrollingStart"
-        />
+    <StateSet motion:defaultState="@id/scrollingStart" />
 
     <Transition
         motion:constraintSetStart="@+id/scrollingStart"
         motion:constraintSetEnd="@+id/scrollingEnd">
-
         <OnSwipe
             motion:touchAnchorId="@+id/motion_header"
             motion:touchAnchorSide="bottom"
             motion:dragDirection="dragUp" />
-
     </Transition>
-
-    <ConstraintSet android:id="@+id/start">
-        <Constraint android:id="@id/motion_header"
-            android:layout_width="match_parent"
-            android:layout_height="104dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            >
-            <PropertySet motion:motionProgress="0" />
-        </Constraint>
-        <Constraint android:id="@id/recycler_view" />
-    </ConstraintSet>
 
     <ConstraintSet android:id="@+id/scrollingStart">
         <Constraint android:id="@id/motion_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="parent"
-            >
+            motion:layout_constraintTop_toTopOf="parent">
             <PropertySet motion:motionProgress="0" />
         </Constraint>
         <Constraint android:id="@id/recycler_view" />
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/scrollingEnd">
-        <Constraint android:id="@+id/motion_header"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            motion:layout_constraintTop_toTopOf="parent"
-            >
+    <ConstraintSet android:id="@+id/scrollingEnd"
+        motion:deriveConstraintsFrom="@id/scrollingStart">
+        <Constraint android:id="@+id/motion_header">
+            <Layout android:layout_width="match_parent" android:layout_height="56dp" />
             <PropertySet motion:motionProgress="1" />
         </Constraint>
-        <Constraint android:id="@id/recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            motion:layout_constraintTop_toBottomOf="@+id/motion_header"
-            motion:layout_constraintBottom_toBottomOf="parent" />
     </ConstraintSet>
 </MotionScene>
