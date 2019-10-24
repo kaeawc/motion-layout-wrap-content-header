@@ -12,9 +12,10 @@
         android:id="@+id/motion_spacer"
         android:layout_width="0dp"
         android:layout_height="128dp"
+        android:background="@color/greenDark"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         />
 
     <TextView
@@ -27,6 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/greenDark"
         />
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

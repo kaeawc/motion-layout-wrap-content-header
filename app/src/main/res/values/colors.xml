@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">@color/white</color>
     <color name="colorPrimaryDark">@color/black</color>
-    <color name="colorAccent">@color/greenDark</color>
+    <color name="colorAccent">@color/indigo</color>
 
 
     <color name="white">#fff</color>
@@ -25,5 +25,7 @@
     <color name="greenPale">#afa</color>
     <color name="greenDark">#16A016</color>
     <color name="bluePale">#88f</color>
+
+    <color name="indigo">#6B38F1</color>
 
 </resources>

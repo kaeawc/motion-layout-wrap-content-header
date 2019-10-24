@@ -26,6 +26,8 @@ class MainActivity : AppCompatActivity() {
             override fun onTransitionCompleted(motionLayout: MotionLayout?, currentId: Int) {
                 Timber.d("completed")
             }
+
+            // override fun allowsTransition(transition: MotionScene.Transition?): Boolean = true
         })
     }
 }

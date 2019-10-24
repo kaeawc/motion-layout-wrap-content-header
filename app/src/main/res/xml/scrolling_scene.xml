@@ -1,34 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<MotionScene
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:motion="http://schemas.android.com/apk/res-auto">
-
-    <StateSet motion:defaultState="@id/scrollingStart" />
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Transition
-        motion:constraintSetStart="@+id/scrollingStart"
-        motion:constraintSetEnd="@+id/scrollingEnd">
+        android:id="@+id/scrollTransition"
+        app:constraintSetStart="@+id/scrollingStart"
+        app:constraintSetEnd="@+id/scrollingEnd">
         <OnSwipe
-            motion:touchAnchorId="@+id/motion_header"
-            motion:touchAnchorSide="bottom"
-            motion:dragDirection="dragUp" />
+            app:touchAnchorId="@+id/motion_header"
+            app:touchAnchorSide="bottom"
+            app:dragDirection="dragUp"
+            app:moveWhenScrollAtTop="true"/>
     </Transition>
 
     <ConstraintSet android:id="@+id/scrollingStart">
         <Constraint android:id="@id/motion_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            motion:layout_constraintTop_toTopOf="parent">
-            <PropertySet motion:motionProgress="0" />
+            android:layout_width="0dp"
+            android:layout_height="108dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
         </Constraint>
         <Constraint android:id="@id/recycler_view" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/scrollingEnd"
-        motion:deriveConstraintsFrom="@id/scrollingStart">
+        app:deriveConstraintsFrom="@id/scrollingStart">
         <Constraint android:id="@+id/motion_header">
-            <Layout android:layout_width="match_parent" android:layout_height="56dp" />
-            <PropertySet motion:motionProgress="1" />
+            <Layout
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
         </Constraint>
     </ConstraintSet>
 </MotionScene>
